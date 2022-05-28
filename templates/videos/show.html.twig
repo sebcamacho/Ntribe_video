@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Videos{% endblock %}
+
+{% block body %}
+    <h1>{{ video.nom }}</h1>
+
+  <link href="https://vjs.zencdn.net/7.19.2/video-js.css" rel="stylesheet" />
+  
+  <video
+    id="my-video"
+    class="video-js vjs-big-play-centered"
+    controls
+    preload="auto"
+    width="800"
+    height="350"
+    poster="{{ asset('assets/images/postnatal_edited.jpg')}}"
+    data-setup="{}"
+  >
+    <source src="{{ asset(video.path)}}" type="video/mp4" />
+    <source src="{{ asset(video.path)}}" type="video/webm" />
+
+    {# <source src="{{ asset('assets/videos/1054862261-preview.mp4')}}" type="video/mp4" />
+    <source src="{{ asset('assets/videos/1054862261-preview.mp4')}}" type="video/webm" /> #}
+
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
+
+  <script src="https://vjs.zencdn.net/7.19.2/video.min.js"></script>
+  <script src="{{ asset('assets/js/videojs.js') }}"></script>
+  
+</body>
+    {# <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ video.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ video.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ video.description }}</td>
+            </tr>
+            <tr>
+                <th>Path</th>
+                <td>{{ video.path }}</td>
+            </tr>
+            <tr>
+                <th>Slug</th>
+                <td>{{ video.slug }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('videos') }}">back to list</a> #}
+
+ 
+
+  
+{% endblock %}

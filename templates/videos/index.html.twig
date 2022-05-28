@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Videos index{% endblock %}
+
+{% block body %}
+<link rel="stylesheet" href="{{ asset('assets/bootswatch/dist/journal/bootstrap.min.css') }}">
+    <h1>Videos index</h1>
+
+<div class="container d-flex ">
+ {% for video in videos %}
+
+    <div class="card" style="width: 18rem;">
+  <img src="{{ asset('assets/images/postnatal_edited.jpg')}}" class="card-img-top" alt="...">
+  <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h2>{{ video.nom }}</h2></li>
+        </ul>
+        <p class="card-text">{{ video.description }}</p>
+        <button type="button" class="btn btn-primary"><a href="{{ path('app_videos_show', {'slug': video.slug}) }}">Voir</a></button>
+
+  </div>
+</div>
+
+
+{% endfor %}
+</div>
+
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+{% endblock %}
