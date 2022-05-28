@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+{% block stylesheets %}
+{{ parent() }}
+
+<link rel="stylesheet" href="{{ asset('assets/bootswatch/dist/journal/bootstrap.min.css') }}">
+{% endblock %}
+{% block body %}
+
+
+
+
+
+<div class="container col-sm-6 mt-5">
+    <h1>Inscription</h1>
+<div class="container mt-5">
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.nom) }} <br>
+        {{ form_row(registrationForm.prenom) }} <br>
+        {{ form_row(registrationForm.telephone) }} <br>
+        {{ form_widget(registrationForm.a_propos, {
+            label: 'À propos'
+        }) }} <br>
+        {{ form_row(registrationForm.email) }} <br>
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-lg btn-primary">S'inscrire</button>
+    {{ form_end(registrationForm) }}
+
+</div>
+</div>
+
+
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+{% endblock %}
