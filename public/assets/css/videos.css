@@ -1,0 +1,18 @@
+h1{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.oneByOne{
+    display: flex;
+    justify-content: space-evenly;
+ 
+}
+
+.card{
+    max-height: 400px;
+    overflow: hidden;
+
+}
+

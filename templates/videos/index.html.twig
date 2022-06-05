@@ -1,12 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Videos index{% endblock %}
+{% block title %}Videos{% endblock %}
 
 {% block body %}
 <link rel="stylesheet" href="{{ asset('assets/bootswatch/dist/journal/bootstrap.min.css') }}">
-    <h1>Videos index</h1>
+<link rel="stylesheet" href="{{ asset('assets/css/videos.css') }}">
 
-<div class="container d-flex ">
+<style>
+
+</style>
+
+    <h1>Videos</h1>
+
+<div class="container oneByOne">
  {% for video in videos %}
 
     <div class="card" style="width: 18rem;">
@@ -15,8 +21,9 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item"><h2>{{ video.nom }}</h2></li>
         </ul>
+        <button type="button" class="btn btn-primary"><a style="color: white" href="{{ path('app_videos_show', {'slug': video.slug}) }}">Voir</a></button>
         <p class="card-text">{{ video.description }}</p>
-        <button type="button" class="btn btn-primary"><a href="{{ path('app_videos_show', {'slug': video.slug}) }}">Voir</a></button>
+        
 
   </div>
 </div>
